@@ -1,18 +1,21 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Build"){
-            steps{
-                script {
-                    echo "build docker image"
-                    sh "docker build -t pruebaJenkins ."
-                    echo "OK"
-                }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
-
         }
-        stage("Deploy"){
-
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
